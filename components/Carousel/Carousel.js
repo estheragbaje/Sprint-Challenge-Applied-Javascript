@@ -64,5 +64,19 @@ const divCarousel = carouselMaker();
 
 //selecting the caroursel container
 const carouselContainer = document.querySelector(".carousel-container");
-
 carouselContainer.appendChild(divCarousel);
+
+//creating a nodelist of the images
+const imageList = document.querySelectorAll(".carousel img");
+console.log(imageList);
+
+const divRightButton = document.querySelector(".carousel .right-button");
+
+//first image shows on the page by default
+let currentIndex = 0;
+imageList[currentIndex].style.display = "block";
+//changing the styles
+divRightButton.addEventListener("click", e => {
+  currentIndex++;
+  imageList[currentIndex].style.display = "block";
+});
