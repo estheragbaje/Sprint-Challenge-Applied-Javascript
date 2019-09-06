@@ -17,3 +17,20 @@ function tabMaker(topic) {
   return divTab;
 }
 // tabMaker(topic);
+
+//query selecting the div with a class topcis
+const topicsDiv = document.querySelector(".topics");
+
+axios
+  .get("https://lambda-times-backend.herokuapp.com/topics")
+  .then(response => {
+    const topicsArray = response.data.topics;
+    topicsArray.forEach(item => {
+      const tabs = tabMaker(item);
+      topicsDiv.appendChild(tabs);
+    });
+  })
+
+  .catch(error => {
+    // document.body.textContent = "error";
+  });
