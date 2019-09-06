@@ -17,3 +17,52 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function carouselMaker() {
+  //creating the div element with the the carousel class
+  const divCarousel = document.createElement("div");
+  divCarousel.classList.add("carousel");
+
+  //creating the div element with the class leftButton
+  const divLeftButton = document.createElement("div");
+  divLeftButton.classList.add("left-button");
+
+  //creating the img elements,setting the source attribut and giving them a class
+  const imageOne = document.createElement("img");
+  imageOne.classList.add("mountains");
+  imageOne.setAttribute("src", "./assets/carousel/mountains.jpeg");
+
+  const imageTwo = document.createElement("img");
+  imageTwo.classList.add("computer");
+  imageTwo.setAttribute("src", "./assets/carousel/computer.jpeg");
+
+  const imageThree = document.createElement("img");
+  imageThree.classList.add("trees");
+  imageThree.setAttribute("src", "./assets/carousel/trees.jpeg");
+
+  const imageFour = document.createElement("img");
+  imageFour.classList.add("turntable");
+  imageFour.setAttribute("src", "./assets/carousel/turntable.jpeg");
+
+  //creating the div element with a class of rightButton
+  const divRightButton = document.createElement("div");
+  divRightButton.classList.add("right-button");
+
+  //appending
+  divCarousel.appendChild(divLeftButton);
+  divCarousel.appendChild(imageOne);
+  divCarousel.appendChild(imageTwo);
+  divCarousel.appendChild(imageThree);
+  divCarousel.appendChild(imageFour);
+  divCarousel.appendChild(divRightButton);
+
+  console.log(divCarousel);
+  return divCarousel;
+}
+
+const divCarousel = carouselMaker();
+
+//selecting the caroursel container
+const carouselContainer = document.querySelector(".carousel-container");
+
+carouselContainer.appendChild(divCarousel);
