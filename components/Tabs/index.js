@@ -7,3 +7,13 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+//creating the div component with a class of tab
+function tabMaker(topic) {
+  const divTab = document.createElement("div");
+  divTab.classList.add("tab");
+  divTab.textContent = topic;
+  console.log(divTab);
+  return divTab;
+}
+// tabMaker(topic);
